@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="jumbotron">
+  <h1 class="display-4">Hello in abyo web news </h1>
+  <p class="lead">This is a abyo d spacing to spacd spacing to spacd spacing to spacd spacing dd spacing to spac spacing to spacto spacd spacing to spac allinabyo mponent for cal web newsm ponent for cal .</p>
+  <hr class="my-4">It abyo abyo ography and spaci
+  <p>It abyo for typography and spacing to space cond spacing to spacrger cond spacing to spacainer.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="/admin" role="button">get start</a>
+  </p>
+</div>
+
+
+
+    {% for p in all_posts  %}
+            <div class="col-md-4">
+               <div class="card "style="width: 25rem;">
+
+                      {% if p.img %}
+
+                          <img src="{{p.img.url}}" class="card-img" alt="Card image cap" >
+                      {%endif%}
+                          <div class="card-body">
+                            <h5 class="card-title">{{p.title}}</h5>
+                            <p class="card-text">{{p.content | truncatewords:5}}</p>
+                            <a href="{% url 'post:posts' p.id %}" class="btn btn-primary">know more</a>
+                          </div>
+                  </div>
+
+            </div>
+    {% endfor %}
+
+
+
+{%endblock body%}

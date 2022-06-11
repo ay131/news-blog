@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+{% extends 'base.html'%}
+{% block body %}
+
+        <div class="col-md-4  single_post">
+              <div class="card " >
+
+                      <img src="{{re_posts.img.url}}" class=" "  >
+                      <div class="card-body">
+                        <h1 class="card-title">{{re_posts.title}}</h1>
+                          <div class="badge bg-primary text-wrap">created at: {{re_posts.created}}</div>
+                          <div class="badge bg-primary text-wrap">by user: {{re_posts.user}}</div>
+                        <p class="card-text">{{re_posts.content}}</p>
+                        <a href="{% url 'post:edit_post' re_posts.id %}"  class="btn btn-outline-primary  btn-lg" >edit post</a>
+                      </div>
+
+              </div>
+        </div>
+
+{%endblock body%}
+
+
+
